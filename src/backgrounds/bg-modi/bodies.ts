@@ -1,0 +1,60 @@
+import { createCircle, createRectangle } from "@utils/matterjs/bodies";
+import type { ICanvasBounds } from "@utils/matterjs/canvas";
+
+import {
+	quinacridoneMagentaColor,
+	brightPinkCrayolaColor,
+	atomicTangerineColor,
+} from "@utils/matterjs/colors";
+
+export const createBodies = (bounds: ICanvasBounds): Matter.Body[] => {
+	const wight = 10;
+	const floor = createRectangle({
+		x: bounds.width / 2,
+		y: bounds.height,
+		width: bounds.width,
+		height: wight,
+		fillColor: "transparent",
+		isStatic: true,
+	});
+	const leftWall = createRectangle({
+		x: 0,
+		y: bounds.height / 2,
+		width: wight,
+		height: bounds.height,
+		fillColor: "transparent",
+		isStatic: true,
+	});
+	const rightWall = createRectangle({
+		x: bounds.width,
+		y: bounds.height / 2,
+		width: wight,
+		height: bounds.height,
+		fillColor: "transparent",
+		isStatic: true,
+	});
+
+
+	const DELTA = 900;
+	const bar = createRectangle({
+		x: bounds.width / 2,
+		y: 0 - DELTA,
+		width: bounds.width - wight,
+		height: bounds.height * 0.1,
+		fillColor: quinacridoneMagentaColor,
+	});
+	const disco = createCircle({
+		x: bounds.width / 4,
+		y: bounds.height / 2 - DELTA,
+		radio: bounds.width / 4 - wight,
+		fillColor: brightPinkCrayolaColor,
+	});
+    const sapo = createCircle({
+		x: bounds.width / 1,
+		y: bounds.height / 2 - DELTA,
+		radio: bounds.width / 4 - wight,
+		fillColor: brightPinkCrayolaColor,
+	});
+
+	return [disco, sapo, bar, rightWall, leftWall, floor];
+};

@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = "Haiku Reels";
 export const SITE_DESCRIPTION = "Haiku Reels";
-export const SITE_URL = "/haiku-reels-astro";
+export const SITE_URL = "/haiku-reels-demo";

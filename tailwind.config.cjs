@@ -16,12 +16,12 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				atomic_tangerine: "#fd9678ff",
+				atomic_tangerine: "#f7e1fc",
 				burnt_sienna: "#d97c65ff",
 				bright_pink_crayola: "#f54768ff",
 				quinacridone_magenta: "#974063ff",
-				delft_blue: "#41436aff",
-				jet: "#3e3638ff",
+				delft_blue: "#4175fa",
+				jet: "#3f2f70",
 			},
 			screens: {
 				tablet: "28rem",
